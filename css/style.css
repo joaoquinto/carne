@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --bg-ano-info: #7030a0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.container-carne {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.container-carne .carne-item + .carne-item {
+  margin-left: 10px;
+}
+
+.linha {
+  width: 100%;
+  border: 2px dotted #000;
+  margin: 10px 0;
+}
+
+.carne-item {
+  border: 2px solid #000;
+  width: 430px;
+}
+
+.header-carne {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-carne {
+  width: 95px;
+  height: 45px;
+}
+
+.title-carne {
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.ano {
+  background-color: var(--bg-ano-info);
+  padding: 1px 0;
+  color: #fff;
+  font-weight: bold;
+  text-align: right;
+}
+
+.text-preto {
+  font-weight: bold;
+}
+
+.informacoes-pagamento li {
+  border-bottom: 1px solid #000;
+  padding: 1px 0;
+}
+
+.informacoes-pagamento li:last-child {
+  border: none;
+}
+
+.informacoes-pagamento li .mes {
+  text-align: right;
+  margin-left: 10%;
+}
+
+.espacamento {
+  margin-bottom: 55px;
+}
+
+.valores {
+  margin-top: 5px;
+}
+
+.valores p {
+  font-weight: bold;
+  border-bottom: 1px solid #000;
+}
+
+.valores p:last-child {
+  border: none;
+}
+
+.valores .valor {
+  position: relative;
+  left: 120px;
+}
+
+.texto-marrom span {
+  position: relative;
+  left: 25px;
+}
+
+.valores .texto-verde {
+  color: green;
+}
+
+.valores .texto-marrom {
+  color: #d4b357;
+}
+
+.valores .valor {
+  margin-left: 10px;
+}
+
+.valores .texto-vermelho {
+  color: red;
+  font-size: 0.813rem;
+}
+
+.valor-pago {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.valor-after::after {
+  content: '________ ';
+}
+
+.data-after::after {
+  content: ' ___ /___/___';
+}
+
+.forma-de-pagamento {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.forma-de-pagamento li {
+  border: none;
+}
