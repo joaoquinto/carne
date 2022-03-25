@@ -131,7 +131,7 @@ a {
 }
 
 .valores .valor {
-  margin-left: 10px;
+  margin-left: -6px;
 }
 
 .valores .texto-vermelho {
@@ -143,14 +143,6 @@ a {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-}
-
-.valor-after::after {
-  content: '________ ';
-}
-
-.data-after::after {
-  content: ' ___ /___/___';
 }
 
 .forma-de-pagamento {
