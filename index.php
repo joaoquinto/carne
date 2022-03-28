@@ -14,6 +14,8 @@
 <body>
   <main class="container">
     <?php
+    include_once "./querys.php";
+
     for ($i = 2; $i <= 12; $i++) {
       $validationMes = ($i == 10 || $i == 11 || $i == 12 ? $i : "0$i");
       echo <<<HTML
@@ -26,8 +28,8 @@
           </header>
           <p class="ano">2022</p>
           <ul class="informacoes-pagamento">
-            <li class="text-preto">Aluno:</li>
-            <li class="text-preto">Série:</li>
+          <li class="text-preto">Aluno: $aluno[0]</li>
+          <li class="text-preto">Série: $aluno[1]°ano - EM</li>
             <li class="text-preto">
               Referente á Mensalidade: <span class="mes">$i/12</span>
             </li>
@@ -65,8 +67,8 @@
           </header>
           <p class="ano">2022</p>
           <ul class="informacoes-pagamento">
-            <li class="text-preto">Aluno:</li>
-            <li class="text-preto">Série:</li>
+          <li class="text-preto">Aluno: $aluno[0]</li>
+          <li class="text-preto">Série: $aluno[1]°ano - EM</li>
             <li class="text-preto">
               Referente á Mensalidade: <span class="mes"> $i/12</span>
             </li>
