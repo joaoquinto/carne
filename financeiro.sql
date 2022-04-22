@@ -14,6 +14,8 @@ USE carne;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+SET SQL_SAFE_UPDATES = 0;
+
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -50,7 +52,6 @@ CREATE TABLE `financeiro` (
   `date_register` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 
 --
 -- Extraindo dados da tabela `financeiro`
@@ -170,6 +171,14 @@ INSERT INTO `financeiro` (`id`, `aluno`, `jan`, `fev`, `mar`, `abr`, `mai`, `jun
 --
 -- Índices para tabelas despejadas
 --
+
+
+ALTER TABLE financeiro ADD COLUMN ano INT NOT NULL;
+
+UPDATE financeiro SET ano = 3 WHERE id >64;
+
+SELECT id,aluno,ano, abr, data_mensalidade FROM financeiro WHERE id = 100;
+
 
 --
 -- Índices para tabela `financeiro`

@@ -1,5 +1,4 @@
 <?php
-
 include_once 'connection.php';
 
 $id = $_GET["id"];
@@ -28,7 +27,7 @@ if (mysqli_num_rows($result) > 0) {
       ],
       $row["data_mensalidade"],
       date("d/m/y", strtotime($row["date_register"])),
-      $row["status"]
+      $row["ano"]
     ];
   }
 }

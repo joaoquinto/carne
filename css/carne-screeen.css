@@ -6,6 +6,10 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -24,18 +28,15 @@ a {
   --bg-ano-info: #7030a0;
 }
 
-.container {
+.container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 800px;
-  margin: 0 auto;
 }
 
 .container img.logomarca{
-  width: 30%;
+  width: 25%;
   margin-top: 30px;
-  border: none;
 }
 
 #familia{
@@ -52,48 +53,29 @@ a {
 
 #familia p{
   text-align: center;
-  line-height: 1.3;
+  line-height: 1.5;
 }
-
-.primeira::first-letter{
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 3.125pc;
-  font-weight: bold;
-
-}
-
 
 #familia p + p{
   margin-top: 10px;
 }
 
 
-.container-carne {
-  width: 100%;
+
+.container-carne{
+  flex: 0 0 300px;
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  flex-direction: column;
 }
 
 .container-carne .carne-item{
-  margin: 0px 0 50px 0;
-}
-
-
-.container-carne .carne-item + .carne-item {
-  margin-left: 10px;
-}
-
-.container .linha {
-  margin: 50px 0 30px 0;
-  width: 100%;
-  border: 2px dotted #000;
+  margin: 30px 0;
 }
 
 
 .carne-item {
   border: 2px solid #000;
-  width: 430px;
+  width: 100%;
 }
 
 .header-carne {
@@ -145,6 +127,7 @@ a {
   margin-top: 5px;
 }
 
+
 .valores p {
   font-weight: bold;
   border-bottom: 1px solid #000;
@@ -163,27 +146,92 @@ a {
   color: #d4b357;
 }
 
-.valores .valor {
-  margin-left: -6px;
-}
-
-.valores .texto-vermelho {
+.valores .texto-vermelho span {
   color: red;
   font-size: 0.813rem;
 }
 
 .valor-pago {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   font-weight: bold;
 }
 
 .forma-de-pagamento {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   font-weight: bold;
 }
 
-.forma-de-pagamento li {
+.forma-de-pagamento li{
+  margin-bottom: 10px;
   border: none;
 }
+
+.forma-de-pagamento li:last-child{
+  margin-bottom: 0px;
+
+}
+ 
+
+@media  screen and (min-width:900px) {
+
+
+.container img.logomarca{
+  width: 20%;
+  margin-top: 30px;
+}
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  .container-carne{
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .container-carne .carne-item{
+    flex: 0 0 50%;    
+    margin: 30px 0;
+  }
+  .container-carne .carne-item + .carne-item{
+    margin-left: 10px;
+
+  }
+  
+  .valor-pago {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  
+  .forma-de-pagamento {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+  }
+  
+  .forma-de-pagamento li{
+    margin-bottom: 0px;
+    border: none;
+  }
+  .forma-de-pagamento li:first-child{
+    margin-bottom: 0px;
+    border: none;
+  }
+
+
+
+}
+
+
+
+

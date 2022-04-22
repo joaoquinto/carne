@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <main id="container">
         <h1 class="title">Lista de alunos</h1>
         <ul id="container-alunos">
@@ -25,11 +24,9 @@
                     echo "<li><a href='carne.php?id=$aluno[id]' target='_blank' rel='noopener noreferrer'>$aluno[nome]</a></li>";
                 }
             }
-
             ?>
         </ul>
     </main>
-
 </body>
 
 </html>
