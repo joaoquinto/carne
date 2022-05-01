@@ -1,32 +1,23 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Lista de alunos" />
-    <meta property="og:description" content="Lista de aluno" />
-    <link rel="stylesheet" href="css/index.css">
-    <title>Lista de alunos</title>
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <title>Acesso ao carnê</title>
 </head>
 
 <body>
-    <main id="container">
-        <h1 class="title">Lista de alunos</h1>
-        <ul id="container-alunos">
-            <?php
-            include_once "./bd/alunosQuery.php";
+    <form action="./login.php" method="post" class="container">
+        <label for="password">Por favor digite sua senha!</label>
+        <input type="password" name="senha" id="password" required autofocus>
+        <button type="submit" class="btn">Acessar</button>
+    </form>
 
-            for ($i = 0; $i < count($alunos); $i++) {
-                $aluno = $alunos[$i];
-                for ($index = 0; $index < 1; $index++) {
-                    echo "<li><a href='carne.php?id=$aluno[id]' target='_blank' rel='noopener noreferrer'>$aluno[nome]</a></li>";
-                }
-            }
-            ?>
-        </ul>
-    </main>
 </body>
 
 </html>

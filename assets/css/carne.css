@@ -1,27 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-ul,
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
+@import url(./reset.css);
 :root {
   --bg-ano-info: #7030a0;
+}
+
+.navegacao {
+  display: none;
 }
 
 .container {
@@ -32,41 +15,37 @@ a {
   margin: 0 auto;
 }
 
-.container img.logomarca{
+.container img.logomarca {
   width: 30%;
   margin-top: 30px;
   border: none;
 }
 
-#familia{
+#familia {
   width: 80%;
 }
 
-.title-familia{
+.title-familia {
   margin: 40px 0;
   font-size: 1.875pc;
   text-transform: uppercase;
   text-align: center;
 }
 
-
-#familia p{
+#familia p {
   text-align: center;
   line-height: 1.3;
 }
 
-.primeira::first-letter{
+.primeira::first-letter {
   font-family: 'Times New Roman', Times, serif;
   font-size: 3.125pc;
   font-weight: bold;
-
 }
 
-
-#familia p + p{
+#familia p + p {
   margin-top: 10px;
 }
-
 
 .container-carne {
   width: 100%;
@@ -75,10 +54,9 @@ a {
   margin-top: 10px;
 }
 
-.container-carne .carne-item{
+.container-carne .carne-item {
   margin: 0px 0 50px 0;
 }
-
 
 .container-carne .carne-item + .carne-item {
   margin-left: 10px;
@@ -89,7 +67,6 @@ a {
   width: 100%;
   border: 2px dotted #000;
 }
-
 
 .carne-item {
   border: 2px solid #000;
@@ -153,7 +130,6 @@ a {
 .valores p:last-child {
   border: none;
 }
-
 
 .valores .texto-verde {
   color: green;

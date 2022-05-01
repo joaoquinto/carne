@@ -1,0 +1,51 @@
+@import url(./reset.css);
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.navegacao {
+  width: 100%;
+  margin-top: 20px;
+  text-align: right;
+}
+
+.navegacao nav .logout {
+  background-color: blueviolet;
+  color: #fff;
+  font-weight: 800;
+  padding: 10px;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+
+.title {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-header th,
+.table-data td {
+  text-transform: uppercase;
+  font-size: 19px;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  transition: all 0.1s;
+}
+
+.table-data td:hover {
+  background-color: blueviolet;
+}
+
+td a {
+  color: #000;
+}

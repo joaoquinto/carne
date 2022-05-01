@@ -1,22 +1,69 @@
 <?php
-function carneMes()
+
+include_once 'Connection.php';
+
+
+class Carne extends Connection
 {
-  include_once "./bd/carneQuery.php";
+
+  public $id;
+  protected $getAluno;
+  protected $result;
+  protected $aluno;
 
 
+  public function __construct($id)
+  {
+    $this->id = $id;
+    $this->getAluno = "SELECT * FROM financeiro WHERE id = $id";
+    $this->result = mysqli_query($this->conexao(), $this->getAluno);
+  }
 
-  for ($i = 1; $i <= 12; $i++) {
-    $nome = $aluno[0];
-    $data_mensalidade = $aluno[1];
-    $valor = $aluno["meses"][$i];
-    $ano = $aluno[3];
-    $ultimoDiaDoMes = date("t");
-    $pagamentoAposDataMensalidade = $data_mensalidade + 1;
-    $anoAtual = date('y');
-    $mesAtual = date('m');
-    $pagamentoDepoisDaMensalidade = ($valor === "0" ? "R$ 0" : $valor + 11);
-    $valorDoPagamentoAtrasado = number_format($valor + ($valor * 0.25), 2, ",");
-    $carne = <<<HTML
+  function getAlunoData()
+  {
+    if (mysqli_num_rows($this->result) > 0) {
+      while ($row = mysqli_fetch_assoc($this->result)) {
+        $this->aluno = [
+          $row["aluno"],
+          "meses" => [
+            1 => $row["jan"],
+            2 => $row["fev"],
+            3 => $row["mar"],
+            4 => $row["abr"],
+            5 => $row["mai"],
+            6 => $row["jun"],
+            7 => $row["jul"],
+            8 => $row["ago"],
+            9 => $row["setembro"],
+            10 => $row["outubro"],
+            11 => $row["nov"],
+            12 => $row["dez"],
+          ],
+          $row["data_mensalidade"],
+          date("d/m/y", strtotime($row["date_register"])),
+          $row["ano"]
+        ];
+      }
+      return $this->aluno;
+    }
+  }
+
+  function mostrarCarne()
+  {
+    for ($i = 1; $i <= 12; $i++) {
+      $alunoData = $this->getAlunoData();
+      $nome = $alunoData[0];
+      $data_mensalidade = $alunoData[1];
+      $valor = $alunoData["meses"][$i];
+      $ano = $alunoData[3];
+      $ultimoDiaDoMes = date("t");
+      $pagamentoAposDataMensalidade = $data_mensalidade + 1;
+      $anoAtual = date('y');
+      $mesAtual = date('m');
+      $pagamentoDepoisDaMensalidade = ($valor === "0" ? "R$ 0" : $valor + 11);
+      $valorDoPagamentoAtrasado = number_format($valor + ($valor * 0.25), 2, ",");
+
+      $carne = <<<HTML
         <section class="container-carne">
           <!-- Original -->
           <div class="carne-item">
@@ -65,7 +112,7 @@ function carneMes()
             </header>
             <p class="ano">2022</p>
             <ul class="informacoes-pagamento">
-            <li class="text-preto">Aluno: $aluno[0]</li>
+            <li class="text-preto">Aluno: $nome</li>
             <li class="text-preto">Série: $ano °ano - EM</li>
               <li class="text-preto">
                 Referente á Mensalidade: <span class="mes"> $i/12</span>
@@ -92,8 +139,9 @@ function carneMes()
         </section>
        HTML;
 
-    if ($i == $mesAtual) {
-      echo $carne;
+      if ($i == $mesAtual) {
+        echo $carne;
+      }
     }
   }
 }

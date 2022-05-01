@@ -1,3 +1,10 @@
+<?php
+session_start();
+if ($_SESSION['logado_status'] !== 1) {
+  header('Location: ./index.php');
+};
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,12 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:title" content="Carnê" />
   <meta property="og:description" content="Carnê template" />
-  <link rel="stylesheet" media="print" href="css/carne.css">
-  <link rel="stylesheet" media="screen" href="css/carne-screeen.css">
+  <link rel="stylesheet" media="print" href="./assets/css/carne.css">
+  <link rel="stylesheet" media="screen" href="./assets/css/carne-screeen.css">
   <title>Carnê</title>
 </head>
 
 <body>
+  <header class="navegacao">
+    <nav><a class="logout" href="logout.php">Sair</a></nav>
+  </header>
   <main class="container">
 
     <img src="./assets/img/image1.png" alt="Colégio Multimédio LTDA" class="logomarca">
@@ -27,9 +37,11 @@
     </blockquote>
     <hr class="linha">
     <?php
-    include_once "carneMes.php";
-    carneMes();
+    include_once './database/Carne.php';
+    $carne =  new Carne($_GET["id"]);
+    $carne->mostrarCarne();
     ?>
+
   </main>
 </body>
 
