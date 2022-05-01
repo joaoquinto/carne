@@ -2,7 +2,7 @@
 <?php
 class Acesso
 {
-  protected const SENHA = "123456789";
+  private const SENHA = "123456789";
   protected $senha;
 
   function getSenha()
