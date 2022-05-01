@@ -13,7 +13,7 @@ if ($_SESSION['logado_status'] !== 1) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:title" content="Carnê" />
-  <meta property="og:description" content="Carnê template" />
+  <meta property="og:description" content="Carnê" />
   <link rel="stylesheet" media="print" href="./assets/css/carne.css">
   <link rel="stylesheet" media="screen" href="./assets/css/carne-screeen.css">
   <title>Carnê</title>
