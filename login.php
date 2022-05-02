@@ -9,10 +9,7 @@ $acesso = new Acesso;
 
 $acesso->setSenha($_POST['senha']);
 
-echo $acesso->getSenha();
-
 $acesso->logar();
-
 
 
 ?>

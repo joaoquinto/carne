@@ -3,7 +3,6 @@ session_start();
 if ($_SESSION['logado_status'] !== 1) {
   header('Location: ./index.php');
 };
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -41,7 +40,6 @@ if ($_SESSION['logado_status'] !== 1) {
     $carne =  new Carne($_GET["id"]);
     $carne->mostrarCarne();
     ?>
-
   </main>
 </body>
 

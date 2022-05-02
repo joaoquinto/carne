@@ -3,7 +3,7 @@
 class Acesso
 {
   private const SENHA = "123456789";
-  protected $senha;
+  private $senha;
 
   function getSenha()
   {

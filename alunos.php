@@ -1,10 +1,8 @@
 <?php
 session_start();
-
 if ($_SESSION['logado_status'] !== 1) {
   header('Location: ./index.php');
 };
-
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +23,7 @@ if ($_SESSION['logado_status'] !== 1) {
     <nav><a class="logout" href="logout.php">Sair</a></nav>
   </header>
   <main class="container">
-    <h1 class="title">Lista de alunos</h1>
+    <h1 class="title" id="top">Lista de alunos</h1>
     <table>
       <tr class="table-header">
         <th>Id</th>
@@ -39,7 +37,9 @@ if ($_SESSION['logado_status'] !== 1) {
       ?>
     </table>
   </main>
-
+  <footer>
+    <a href="#top" class="back-to-top"><img src="./assets/img/arrow-up-solid.svg" alt=""></a>
+  </footer>
 </body>
 
 
